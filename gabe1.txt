@@ -1,0 +1,10 @@
+Chest Guard
+Leg Guards
+Gloves
+Communicator
+TAKEN
+Ammo Pack
+ROOM
+Hallway
+HEALTH
+100
