@@ -2,15 +2,16 @@ Chest Guard
 Leg Guards
 Gloves
 Communicator
+Ammo
 Blaster
 TAKEN
+Ammo
 Blaster
 ROOM
-Armory
+Hallway
 HEALTH
 100
 ABILITY
-Fly
-Sharpshooter
+[]
 AMMO
-10
+50
