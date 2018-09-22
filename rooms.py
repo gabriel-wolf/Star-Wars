@@ -10,15 +10,18 @@ class Rooms():
     def Armory(self):
         self.roomName = "Armory"
         self.roomDescription = "There are boxes of gear everywhere."
-        self.roomItems = ['M451 Blaster', 'Ammo Pack']
+        self.roomItems = ['Blaster', 'Ammo Pack']
         self.itemsDescription = ["An M451 Blaster is sitting on the ground.", "An ammo pack lays on the floor."]
         j = len(self.taken)
-        while j > 0:
-            alreadytakenItems = [i for i in self.taken if i in self.roomItems]
-            alreadytakenIndex = self.roomItems.index(alreadytakenItems[0])
-            self.roomItems.remove(alreadytakenItems[0])
-            del self.itemsDescription[alreadytakenIndex]
-            j = j - 1
+        try:
+            while j > 0:
+                alreadytakenItems = [i for i in self.taken if i in self.roomItems]
+                alreadytakenIndex = self.roomItems.index(alreadytakenItems[0])
+                self.roomItems.remove(alreadytakenItems[0])
+                del self.itemsDescription[alreadytakenIndex]
+                j = j - 1
+        except TypeError:
+            print(None)
         self.npc = ["Soldier"]
         self.npcDescription = ["A soldier stands next to you loading his weapon."]
         self.exits = ['Hallway','Docking Bay','','Storage Closet']
@@ -37,12 +40,15 @@ class Rooms():
         self.roomItems = None
         self.itemsDescription = None
         j = len(self.taken)
-        while j > 0:
-            alreadytakenItems = [i for i in self.taken if i in self.roomItems]
-            alreadytakenIndex = self.roomItems.index(alreadytakenItems[0])
-            self.roomItems.remove(alreadytakenItems[0])
-            del self.itemsDescription[alreadytakenIndex]
-            j = j - 1
+        try:
+            while j > 0:
+                alreadytakenItems = [i for i in self.taken if i in self.roomItems]
+                alreadytakenIndex = self.roomItems.index(alreadytakenItems[0])
+                self.roomItems.remove(alreadytakenItems[0])
+                del self.itemsDescription[alreadytakenIndex]
+                j = j - 1
+        except TypeError:
+            print(None)
         self.npc = None
         self.npcDescription = None
         self.exits = ['Living Quarters',None,'Armory','Deck']
@@ -156,6 +162,19 @@ class Rooms():
                                 i = i + 1
                         except IndexError:
                             print()
+                        savefileeditor.write("TAKEN\n")
+                        i = 0
+                        try:
+                            while i >= 0:
+                                savefileeditor.write(self.taken[i] + "\n")
+                                i = i + 1
+                        except IndexError:
+                            print()
+                        savefileeditor.write("ROOM\n")
+                        savefileeditor.write(self.roomName + "\n")
+                        savefileeditor.write("HEALTH\n")
+                        savefileeditor.write(str(self.health) + "\n")
+
                         savefileeditor.close()
                         print("Saved")
 
@@ -180,8 +199,32 @@ class Rooms():
                         restoredRoom = broken2[:breakIndexHealth]
                         restoredHealth = broken2[-breakIndexHealth:]
 
-                        
+                        self.inventory.clear
+                        self.taken.clear
+                        self.inventory = restoredItems
+                        self.taken = restoredTaken
+                        self.health = restoredHealth
                         print("Restored")
+                        if (restoredRoom[0] == "Armory"):
+                            self.Armory()
+                        elif (restoredRoom[0] == "Hallway"):
+                            self.Hallway()
+                        elif (restoredRoom[0] == "Docking Bay"):
+                            self.DockingBay
+                        elif (restoredRoom[0] == "Space"):
+                            self.Space
+                        elif (restoredRoom[0] == "Living Quarters"):
+                            self.LivingQuarters
+                        elif (restoredRoom[0] == "Deck"):
+                            self.Deck
+                        elif (restoredRoom[0] == "Storage Closet"):
+                            self.StorageCloset
+                        elif (restoredRoom[0] == "Locked Room"):
+                            self.LockedRoom
+                        else:
+                            print("Error Unkown Restore Room")
+
+
 
                     elif(yesorno.lower() == "no") or (yesorno.lower() == "n"):
                         print("Ok. I didn't restore it.")
@@ -191,9 +234,13 @@ class Rooms():
                         self.roomfunc()
 
 
+                elif(self.input.lower() == "look") or (self.input.lower() == "l"):
+                    repeatRoom = True;
+                    break
 
                 elif(self.input.lower() == "quit") or (self.input.lower() == "exit"):
                     exit(0)
+
 
 
 
@@ -203,22 +250,16 @@ class Rooms():
         elif self.exits[dir] == "Hallway":
             self.Hallway()
         elif self.exits[dir] == "Docking Bay":
-            #self.DockingBay()
-            self.Armory()
+            self.DockingBay
         elif self.exits[dir] == "Space":
-            #self.Space()
-            self.Armory()
+            self.Space
         elif self.exits[dir] == "Living Quarters":
-            #self.LivingQuarters()
-            self.Armory()
+            self.LivingQuarters
         elif self.exits[dir] == "Deck":
-            #self.Deck()
-            self.Armory()
+            self.Deck
         elif self.exits[dir] == "Storage Closet":
-            #self.StorageCloset()
-            self.Armory()
+            self.StorageCloset
         elif self.exits[dir] == "Locked Room":
-            #self.LockedRoom()
-            self.Armory()
+            self.LockedRoom
         else:
             print("Room changer Error")

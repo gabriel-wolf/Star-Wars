@@ -1,0 +1,11 @@
+Chest Guard
+Leg Guards
+Gloves
+Communicator
+Blaster
+TAKEN
+Blaster
+ROOM
+Armory
+HEALTH
+100
