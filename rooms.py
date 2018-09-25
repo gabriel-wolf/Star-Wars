@@ -71,7 +71,7 @@ class Rooms():
                         "To the east one spaceship catches your eye.",
                         "",
                         "To the west is the armory."],
-                GROUND: ["Flight Manuel", "Fuel", "Spaceship"]},
+                GROUND: ["Flight Manual", "Fuel", "Spaceship"]},
 
         }
 
@@ -83,7 +83,7 @@ class Rooms():
                 TAKEABLE: True,
                 ISWEAPON: True,
                 DAMAGE: 5,
-                DESCWORDS: ['blaster', 'm451 blaster']},
+                DESCWORDS: ['blaster', 'm451 blaster', 'gun']},
 
             'Lightsaber': {
                 GROUNDDESC: 'A lightsaber is sitting on the ground.',
@@ -116,7 +116,7 @@ class Rooms():
                 LONGDESC: 'You read the manual.',
                 TAKEABLE: True,
                 ISWEAPON: False,
-                DESCWORDS: ['manual', 'guide']},
+                DESCWORDS: ['manual', 'guide', 'booklet']},
 
             'Fuel': {
                 GROUNDDESC: 'A container of fuel is on the ground.',
@@ -171,131 +171,10 @@ class Rooms():
         self.damage = 0
         self.readRoom(self.location)
 
-    # def Armory(self):
-    #     self.npc = ["Soldier"]
-    #     self.npcDescription = ["A soldier stands next to you loading his weapon."]
-    #     self.canfight = False
-    #     self.isfighting = False
-    #     self.cangoNorth = True
-    #     self.cangoEast = True
-    #     self.cangoSouth = False
-    #     self.cangoWest = True
-    #     self.fought = False
-    #     self.randomAttack = random.randint(0,20)
-    #     # when attack sequence is true
-    #     if(self.randomAttack == 1):
-    #         print(self.ammo)
-    #         if(int(self.ammo) > 0) and ("Blaster" in self.taken):
-    #             self.npc = ["Soldier"]
-    #             self.enemy = ["Bounty Hunter"]
-    #             self.randprobtotal = 25
-    #             self.randprobsplit = 9
-    #             self.enemypower = 5
-    #             self.reward = "Helmet"
-    #             self.rewardMessage = "You pick up the Mandelorian's Helmet and put it on."
-    #             self.npcDescription = ["A soldier is on the ground, hit by blaster fire."]
-    #             self.attackerdecription = "A bounty hunter looks straight at you. He raises his gun and points it straight at you."
-    #             self.fightYouHitAttacker = "You fire your blaster, the bounty hunter is hit!"
-    #             self.fightYouHitAttackerMiss = "You fire your blaster but the bounty hunter dodges your shot!"
-    #             self.fightAttackerHitYou = "The bounty hunter fires and you are hit!"
-    #             self.fightAttackerHitYouMiss = "The bounty hunter fires but but misses you!"
-    #             self.fightAttackerDead = "As you fire your gun the bounty hunter breathes his last breath and falls to the ground."
-    #             self.fightoutofammo = "You have ran out of ammo!"
-    #             self.fightYouDead =  "You are hit and fall to the ground."
-    #             self.enemyHealth = 20
-    #             self.canfight = True
-    #             self.isfighting = True
-    #             self.cangoNorth = False
-    #             self.cangoEast = False
-    #             self.cangoSouth = False
-    #             self.cangoWest = False
-    #             self.fought = False
-    #     else:
-    #         self.npc = ["Soldier"]
-    #         self.npcDescription = ["A soldier stands next to you loading his weapon."]
-    #         self.canfight = False
-    #         self.isfighting = False
-    #         self.cangoNorth = True
-    #         self.cangoEast = True
-    #         self.cangoSouth = False
-    #         self.cangoWest = True
-    #         self.fought = False
-    #     self.roomName = "Armory"
-    #     self.roomDescription = "There are boxes of gear everywhere."
-    #     self.roomItems = ['Blaster', 'Ammo']
-    #     self.itemsDescription = ["An M451 Blaster is sitting on the ground.", "An ammo pack lays on the floor."]
-    #     j = len(self.taken)
-    #     try:
-    #         while j > 0:
-    #             alreadytakenItems = [i for i in self.taken if i in self.roomItems]
-    #             alreadytakenIndex = self.roomItems.index(alreadytakenItems[0])
-    #             self.roomItems.remove(alreadytakenItems[0])
-    #             del self.itemsDescription[alreadytakenIndex]
-    #             j = j - 1
-    #     except TypeError:
-    #         print(None)
-    #
-    #     self.exits = ['Hallway','Docking Bay','','Storage Closet']
-    #     self.exitsDescriptions = ['To the north is a long hallway.','To the east is the docking bay.','','To the west is a storage closet.']
-    #
-    #     self.roomfunc()
-    #
-    # def Hallway(self):
-    #     self.roomName = "Hallway"
-    #     self.roomDescription = "You are in a long hallway."
-    #     self.roomItems = None
-    #     self.itemsDescription = None
-    #     j = len(self.taken)
-    #     try:
-    #         while j > 0:
-    #             alreadytakenItems = [i for i in self.taken if i in self.roomItems]
-    #             alreadytakenIndex = self.roomItems.index(alreadytakenItems[0])
-    #             self.roomItems.remove(alreadytakenItems[0])
-    #             del self.itemsDescription[alreadytakenIndex]
-    #             j = j - 1
-    #     except TypeError:
-    #         print(None)
-    #     self.npc = None
-    #     self.npcDescription = None
-    #     self.exits = ['Living Quarters',None,'Armory','Deck']
-    #     self.exitsDescriptions = ['To the north is the living quarters.','','To the south is the armory.',"To the west is the ship's main deck."]
-    #     self.canfight = False
-    #     self.isfighting = False
-    #     self.cangoNorth = True
-    #     self.cangoEast = False
-    #     self.cangoSouth = True
-    #     self.cangoWest = True
-    #     self.roomfunc()
-    #
-    # def DockingBay(self):
-    #     self.roomName = "Docking Bay"
-    #     self.roomDescription = "There are ships everywhere."
-    #     self.roomItems = ['Manual', 'Fuel']
-    #     self.itemsDescription = ["In the corner of the bay, a ship control manuel sits.", ""]
-    #     j = len(self.taken)
-    #     try:
-    #         while j > 0:
-    #             alreadytakenItems = [i for i in self.taken if i in self.roomItems]
-    #             alreadytakenIndex = self.roomItems.index(alreadytakenItems[0])
-    #             self.roomItems.remove(alreadytakenItems[0])
-    #             del self.itemsDescription[alreadytakenIndex]
-    #             j = j - 1
-    #     except TypeError:
-    #         print(None)
-    #     self.npc = ["Soldier"]
-    #     self.npcDescription = ["A soldier stands next to you loading his weapon."]
-    #     self.exits = ['Hallway','Docking Bay','','Storage Closet']
-    #     self.exitsDescriptions = ['To the north is a long hallway.','To the east is the docking bay.','','To the west is a storage closet.']
-    #     self.canfight = False
-    #     self.isfighting = False
-    #     self.cangoNorth = True
-    #     self.cangoEast = True
-    #     self.cangoSouth = False
-    #     self.cangoWest = True
-    #     self.roomfunc()
 
 
     def readRoom(self, loc):
+        self.location = loc
         self.enemyinroom = False
         print(loc)
         print(self.worldRooms[loc][DESC], end='\n')
@@ -414,7 +293,10 @@ class Rooms():
             elif("take" in self.input.lower()):
                 stripInput = self.input.title()
                 strippedInput = stripInput[5:]
-                item = self.getItemfromDesc(strippedInput.title(), self.worldRooms[self.location][GROUND])
+                if strippedInput.lower() in self.worldRooms[self.location][GROUND]:
+                    item = strippedInput.title()
+                else:
+                    item = self.getItemfromDesc(strippedInput.title(), self.worldRooms[self.location][GROUND])
                 print(item)
                 if self.worldItems[item][TAKEABLE] == False:
                     print('You cannot take "%s".' % (strippedInput))
@@ -798,9 +680,16 @@ class Rooms():
 
     def getItemfromDesc(self,desc,itemList):
         itemList = list(set(itemList))
+
+        item = ''
         for item in itemList:
-            if desc.lower() in self.worldItems[item][DESCWORDS]:
-                return item
+            for words in range(len(self.worldItems[item][DESCWORDS])):
+                if desc.lower() in self.worldItems[item][DESCWORDS]:
+                    try:
+                        return item
+                    except TypeError:
+                        continue
+
 
     def getAllItemsMatchingDesc(self,desc,itemList):
         itemList = list(set(itemList))
