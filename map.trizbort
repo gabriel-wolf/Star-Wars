@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trizbort>
+	<info>
+		<title>Star Wars Adventure</title>
+		<author>Gabriel Wolf</author>
+		<description>Python Star Wars Text Adventure Game Map.</description>
+	</info>
+	<map>
+		<room id="1" name="Armory" x="-64" y="-32" w="96" h="64" description="Once killed mandalorian get helmet">
+			<objects at="wsw">Blaster|Ammo (50x)</objects>
+		</room>
+		<room id="2" name="Hallway" x="-64" y="-128" w="96" h="64" description="">
+			<objects at="wsw" />
+		</room>
+		<room id="3" name="Docking Station" x="64" y="-32" w="96" h="64" description="">
+			<objects at="wsw">Manual|Fuel</objects>
+		</room>
+		<room id="4" name="Living Quarters" x="-64" y="-224" w="96" h="64" description="">
+			<objects at="wsw">Leaflet</objects>
+		</room>
+		<room id="5" name="Deck" x="-192" y="-128" w="96" h="64" description="">
+			<objects at="wsw" />
+		</room>
+		<room id="6" name="Storage Closet" x="-192" y="-32" w="96" h="64" description="">
+			<objects at="wsw">Shiny Object (Lightsaber crystal)</objects>
+		</room>
+		<room id="7" name="Locked Room" x="-384" y="-96" w="96" h="64" isDark="yes" description="">
+			<objects at="wsw">Treasure...</objects>
+		</room>
+		<line id="8" style="dashed" midText="locked">
+			<dock index="0" id="6" port="w" />
+			<dock index="1" id="7" port="e" />
+		</line>
+		<line id="9">
+			<dock index="0" id="5" port="s" />
+			<dock index="1" id="6" port="n" />
+		</line>
+		<line id="10">
+			<dock index="0" id="6" port="e" />
+			<dock index="1" id="1" port="w" />
+		</line>
+		<line id="11">
+			<dock index="0" id="1" port="e" />
+			<dock index="1" id="3" port="w" />
+		</line>
+		<line id="12">
+			<dock index="0" id="1" port="n" />
+			<dock index="1" id="2" port="s" />
+		</line>
+		<line id="13">
+			<dock index="0" id="2" port="n" />
+			<dock index="1" id="4" port="s" />
+		</line>
+		<line id="16" midText="via spaceship">
+			<dock index="0" id="3" port="e" />
+			<dock index="1" id="17" port="w" />
+		</line>
+		<room id="17" name="Coruscant" x="320" y="-32" w="96" h="64" description="City&#xD;&#xA;Center of space travels">
+			<objects at="wsw" />
+		</room>
+		<line id="14">
+			<dock index="0" id="5" port="e" />
+			<dock index="1" id="2" port="w" />
+		</line>
+		<room id="15" name="Tatooine" x="608" y="-32" w="96" h="64" description="Desert">
+			<objects at="wsw" />
+		</room>
+		<room id="19" name="Hoth" x="448" y="96" w="96" h="64" description="Ice">
+			<objects at="wsw" />
+		</room>
+		<room id="21" name="Endor" x="544" y="-224" w="96" h="64" description="Jungle world&#xD;&#xA;home of ewoks&#xD;&#xA;">
+			<objects at="wsw" />
+		</room>
+		<line id="18" midText="via spaceship">
+			<dock index="0" id="17" port="ese" />
+			<dock index="1" id="19" port="n" />
+		</line>
+		<line id="20" midText="via spaceship">
+			<dock index="0" id="17" port="e" />
+			<dock index="1" id="15" port="w" />
+		</line>
+		<line id="22" midText="via spaceship">
+			<dock index="0" id="17" port="ene" />
+			<dock index="1" id="21" port="s" />
+		</line>
+		<room id="23" name="Mandalore" x="352" y="-288" w="96" h="64" description="">
+			<objects at="wsw" />
+		</room>
+		<line id="24" style="dashed" midText="via spaceship">
+			<dock index="0" id="23" port="s" />
+			<dock index="1" id="17" port="n" />
+		</line>
+		<room id="25" name="Tython" x="288" y="160" w="96" h="64" description="Home of the jedis&#xD;&#xA;">
+			<objects at="wsw" />
+		</room>
+		<line id="26" midText="via spaceship">
+			<dock index="0" id="17" port="s" />
+			<dock index="1" id="25" port="n" />
+		</line>
+		<room id="27" name="Infirmary" x="-64" y="-320" w="96" h="64" description="">
+			<objects at="wsw">Medpacks</objects>
+		</room>
+		<line id="28">
+			<dock index="0" id="27" port="s" />
+			<dock index="1" id="4" port="n" />
+		</line>
+		<room id="29" name="Jedi Temple" x="288" y="256" w="96" h="64" description="">
+			<objects at="wsw">Lightsaber parts</objects>
+		</room>
+		<line id="30">
+			<dock index="0" id="29" port="n" />
+			<dock index="1" id="25" port="s" />
+		</line>
+		<room id="31" name="Rebel Base" x="448" y="192" w="96" h="64" description="">
+			<objects at="wsw">Blaster|Ammo|Medpack</objects>
+		</room>
+		<line id="32">
+			<dock index="0" id="19" port="s" />
+			<dock index="1" id="31" port="n" />
+		</line>
+		<room id="33" name="Cave" x="608" y="96" w="96" h="64" isDark="yes" description="">
+			<objects at="wsw">Wampa Cave</objects>
+		</room>
+		<line id="34" style="dashed" startText="in" endText="out">
+			<dock index="0" id="33" port="w" />
+			<dock index="1" id="19" port="e" />
+		</line>
+		<room id="35" name="Sand Dunes" x="800" y="-64" w="96" h="64" description="">
+			<objects at="wsw" />
+		</room>
+		<line id="36" style="dashed" startText="down" endText="up">
+			<dock index="0" id="15" port="ene" />
+			<dock index="1" id="35" port="w" />
+		</line>
+		<room id="37" name="Hospital" x="160" y="-192" w="96" h="64" description="">
+			<objects at="wsw">Medpacks</objects>
+		</room>
+		<line id="38">
+			<dock index="0" id="37" port="s" />
+			<dock index="1" id="17" port="nw" />
+		</line>
+		<room id="39" name="Flight Training" x="-192" y="-224" w="96" h="64" description="Learn to fly your ship">
+			<objects at="wsw" />
+		</room>
+		<line id="40">
+			<dock index="0" id="5" port="n" />
+			<dock index="1" id="39" port="s" />
+		</line>
+		<line id="41">
+			<dock index="0" id="39" port="e" />
+			<dock index="1" id="4" port="w" />
+		</line>
+	</map>
+	<settings>
+		<colors>
+			<canvas>White</canvas>
+			<fill>White</fill>
+			<border>Black</border>
+			<line>Black</line>
+			<selectedLine>SteelBlue</selectedLine>
+			<hoverLine>DarkOrange</hoverLine>
+			<largeText>Black</largeText>
+			<smallText>Black</smallText>
+			<lineText>Black</lineText>
+			<grid>#F5F5F5</grid>
+		</colors>
+		<fonts>
+			<room size="12.75">Consolas</room>
+			<object size="11.25">Consolas</object>
+			<line size="9">Consolas</line>
+		</fonts>
+		<grid>
+			<snapTo>yes</snapTo>
+			<visible>yes</visible>
+			<showOrigin>yes</showOrigin>
+			<size>32</size>
+		</grid>
+		<lines>
+			<width>2</width>
+			<handDrawn>no</handDrawn>
+			<arrowSize>12</arrowSize>
+			<textOffset>4</textOffset>
+		</lines>
+		<rooms>
+			<darknessStripeSize>24</darknessStripeSize>
+			<objectListOffset>4</objectListOffset>
+			<connectionStalkLength>32</connectionStalkLength>
+			<preferredDistanceBetweenRooms>64</preferredDistanceBetweenRooms>
+		</rooms>
+		<ui>
+			<handleSize>12</handleSize>
+			<snapToElementSize>16</snapToElementSize>
+		</ui>
+		<keypadNavigation>
+			<creationModifier>control</creationModifier>
+			<unexploredModifier>alt</unexploredModifier>
+		</keypadNavigation>
+	</settings>
+</trizbort>

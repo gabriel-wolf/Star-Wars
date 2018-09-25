@@ -1,0 +1,20 @@
+Chest Guard
+Leg Guards
+Gloves
+Communicator
+M451 Blaster
+Ammo Pack
+TAKEN
+
+M451 Blaster
+Ammo Pack
+ROOM
+Armory
+HEALTH
+100
+ABILITY
+['']
+AMMO
+50
+DAMAGE
+5
