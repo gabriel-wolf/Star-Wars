@@ -1,0 +1,18 @@
+Chest Guard
+Leg Guards
+Gloves
+Communicator
+Ammo Pack
+TAKEN
+
+Ammo Pack
+ROOM
+Armory
+HEALTH
+100
+ABILITY
+['']
+AMMO
+50
+DAMAGE
+0
