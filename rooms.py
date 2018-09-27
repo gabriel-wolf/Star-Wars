@@ -1,5 +1,6 @@
 import random
 import time
+from os import system
 
 
 DESC = 'desc'
@@ -33,7 +34,15 @@ NPC = "roomnpcs"
 class Rooms():
 
     def __init__(self):
-        None
+        _ = system('cls')
+        print("STAR WARS ADVENTURE\n"
+                "Python interactive fiction - a star wars adventure\n"
+                "Copyright (c) 2018 by Gabriel Wolf All rights reserved.\n"
+                "Star Wars is a trademark of Lucas Films\n"
+                "Release 1 / Serial Number 851003\n"
+                "\n")
+
+
 
         self.worldRooms = {
             'Armory': {

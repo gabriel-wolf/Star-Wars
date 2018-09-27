@@ -1,7 +1,9 @@
 from settings import Settings
 from pygame import mixer
 from rooms import Rooms
+import select
 import time
+import subprocess
 from os import system, name
 import sys
 import ctypes
@@ -26,8 +28,16 @@ def rungame():
     "                                                In a galaxy far, far away...\n"
     )
 
-
     time.sleep(4.5)
+
+    answer = input("\n\n\n\n\n\n\n\n\nPress ENTER to Continue (Press Q + ENTER to Skip) ")
+    if answer.lower() == "q":
+        _ = system('cls')
+        Rooms()
+    else:
+        None
+
+    time.sleep(0.5)
 
     _ = system('cls')
 
@@ -61,9 +71,18 @@ def rungame():
     time.sleep(5)
 
 
-    print("\n\n"
-    "                                                Press ENTER to Start...")
-    input()
+    answer = input("\n\n"
+    "                                                Press ENTER to Continue...\n"
+    "                                                Or Q + ENTER to Skip\n)")
+    if answer.lower() == "q":
+        mixer.music.fadeout(3000)
+        time.sleep(3)
+        _ = system('cls')
+        Rooms()
+    else:
+        None
+
+
     # stop music
     mixer.music.fadeout(3000)
     time.sleep(3)
